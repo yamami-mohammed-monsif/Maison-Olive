@@ -118,19 +118,4 @@
     --shadow-card: 0 10px 30px -12px hsl(108 15% 18% / 0.18);
     --transition-smooth: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
-
-  /* .animate-fade-up {
-    animation: fade-up 0.8s ease-out both;
-  }
-
-  @keyframes fade-up {
-    0% {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  } */
 }

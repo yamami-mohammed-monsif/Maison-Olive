@@ -64,7 +64,7 @@ export const Navbar = () => {
       </div>
       {open && (
         <div
-          className={`lg:hidden animate-fade-up ${isHome ? "bg-primary text-primary-foreground" : "bg-background text-primary border-b border-border"}`}
+          className={`lg:hidden ${isHome ? "bg-primary text-primary-foreground" : "bg-background text-primary border-b border-border"}`}
         >
           <div className="container-narrow py-6 flex flex-col gap-4">
             {links.map((l) => (

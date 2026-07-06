@@ -60,7 +60,7 @@ export const Products = () => {
             <Link
               href={`/collection/${p.slug}`}
               key={p.name}
-              className="group bg-card shadow-card hover:shadow-soft transition-all duration-500 animate-fade-up block"
+              className="group bg-card shadow-card hover:shadow-soft transition-all duration-500 block"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div className="aspect-5/6] overflow-hidden">
