@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -19,6 +20,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const prefersReducedMotion = useReducedMotion();
 
   const navText = isHome
     ? "text-primary-foreground/90 hover:text-accent"
@@ -28,7 +30,12 @@ export const Navbar = () => {
   const headerBg = isHome ? "" : "bg-background border-b border-border";
 
   return (
-    <header className={`absolute top-0 inset-x-0 z-30 ${headerBg}`}>
+    <motion.header
+      initial={prefersReducedMotion ? false : { opacity: 0, y: -24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className={`absolute top-0 inset-x-0 z-30 ${headerBg}`}
+    >
       <div className="container-narrow flex items-center justify-between py-6">
         <Link
           href="/"
@@ -85,6 +92,6 @@ export const Navbar = () => {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
