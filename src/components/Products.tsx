@@ -63,7 +63,7 @@ export const Products = () => {
               className="group bg-card shadow-card hover:shadow-soft transition-all duration-500 block"
               style={{ animationDelay: `${i * 60}ms` }}
             >
-              <div className="aspect-5/6] overflow-hidden">
+              <div className="aspect-5/6 overflow-hidden">
                 <img
                   src={p.img.src}
                   alt={p.name}
