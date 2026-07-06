@@ -1,3 +1,6 @@
+"use client";
+
+import { Reveal } from "../Reveal";
 import { Quote } from "lucide-react";
 
 const reviews = [
@@ -24,15 +27,21 @@ export const Testimonials = () => (
     className="py-24 lg:py-32 bg-primary text-primary-foreground"
   >
     <div className="container-narrow">
-      <div className="text-center mb-16">
-        <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-          Des clients <em className="text-accent not-italic">devenus</em>
-          <br />
-          ambassadeurs.
-        </h2>
-      </div>
+      <Reveal>
+        <div className="text-center mb-16">
+          <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+            Des clients <em className="text-accent not-italic">devenus</em>
+            <br />
+            ambassadeurs.
+          </h2>
+        </div>
+      </Reveal>
 
-      <div className="grid md:grid-cols-3 gap-px bg-primary-foreground/10">
+      <Reveal
+        stagger
+        staggerDelay={0.16}
+        className="grid md:grid-cols-3 gap-px bg-primary-foreground/10"
+      >
         {reviews.map((r) => (
           <figure
             key={r.name}
@@ -50,7 +59,7 @@ export const Testimonials = () => (
             </figcaption>
           </figure>
         ))}
-      </div>
+      </Reveal>
     </div>
   </section>
 );

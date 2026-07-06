@@ -1,6 +1,9 @@
+"use client";
+
 import heroImg from "@/public/assets/hero-living.jpg";
 import { Button } from "@/src/components/ui/button";
 import { Phone } from "lucide-react";
+import { Reveal } from "../Reveal";
 
 export const Hero = () => (
   <section
@@ -18,14 +21,16 @@ export const Hero = () => (
     <div className="absolute inset-0 bg-primary/20" />
 
     <div className="relative container-narrow py-24 lg:py-32">
-      <div className="max-w-3xl animate-fade-up">
-        <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground leading-[0.95]">
-          L'art de vivre,
-          <br />
-          <em className="text-accent not-italic font-light">
-            pièce par pièce.
-          </em>
-        </h1>
+      <Reveal stagger staggerDelay={0.16}>
+        <div className="max-w-3xl">
+          <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground leading-[0.95]">
+            L'art de vivre,
+            <br />
+            <em className="text-accent not-italic font-light">
+              pièce par pièce.
+            </em>
+          </h1>
+        </div>
         <p className="mt-8 text-base md:text-lg text-primary-foreground/85 max-w-xl leading-relaxed">
           Nous ne vendons pas du mobilier. Nous composons des pièces entièrement
           décorées — salons, cuisines, chambres — livrées clé en main, prêtes à
@@ -41,7 +46,7 @@ export const Hero = () => (
             <a href="#realisations">Voir les réalisations</a>
           </Button>
         </div>
-      </div>
+      </Reveal>
     </div>
 
     <div className="absolute bottom-8 right-8 hidden md:flex flex-col items-end gap-2 text-primary-foreground/70 text-xs tracking-[0.3em] uppercase">

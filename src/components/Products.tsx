@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { products, productCategories } from "@/src/lib/constants";
+import { Reveal } from "../Reveal";
 
 export const Products = () => {
   const [active, setActive] = useState("Toutes");
@@ -16,36 +17,45 @@ export const Products = () => {
     <section id="collections" className="py-24 lg:py-32 bg-background">
       <div className="container-narrow">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="eyebrow justify-center inline-flex">
-            Nos collections
-          </span>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.05]">
-            Des pièces <em className="text-highlight not-italic">entières,</em>
-            <br />à adopter telles quelles.
-          </h2>
-          <p className="mt-6 text-foreground/70">
-            Chaque collection regroupe mobilier, textiles, luminaires et
-            accessoires — sélectionnés pour fonctionner ensemble.
-          </p>
+          <Reveal stagger staggerDelay={0.16}>
+            <span className="eyebrow justify-center inline-flex">
+              Nos collections
+            </span>
+            <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.05]">
+              Des pièces{" "}
+              <em className="text-highlight not-italic">entières,</em>
+              <br />à adopter telles quelles.
+            </h2>
+            <p className="mt-6 text-foreground/70">
+              Chaque collection regroupe mobilier, textiles, luminaires et
+              accessoires — sélectionnés pour fonctionner ensemble.
+            </p>
+          </Reveal>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {productCategories.map((c) => (
-            <button
-              key={c}
-              onClick={() => setActive(c)}
-              className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border cursor-pointer transition-all ${
-                active === c
-                  ? "bg-accent text-accent-foreground border-accent"
-                  : "border-border text-foreground/70 hover:border-accent hover:text-accent"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
+        <Reveal>
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {productCategories.map((c) => (
+              <button
+                key={c}
+                onClick={() => setActive(c)}
+                className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border cursor-pointer transition-all ${
+                  active === c
+                    ? "bg-accent text-accent-foreground border-accent"
+                    : "border-border text-foreground/70 hover:border-accent hover:text-accent"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Reveal
+          stagger
+          staggerDelay={0.16}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {filtered.map((p, i) => (
             <Link
               href={`/collection/${p.slug}`}
@@ -82,7 +92,7 @@ export const Products = () => {
               </div>
             </Link>
           ))}
-        </div>
+        </Reveal>
 
         <div className="mt-14 text-center">
           <Button variant="gold" size="lg" asChild>

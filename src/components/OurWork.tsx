@@ -5,6 +5,7 @@ import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { works, workCategories } from "@/src/lib/constants";
+import { Reveal } from "../Reveal";
 
 export const OurWork = () => {
   const [active, setActive] = useState("Tout");
@@ -14,40 +15,42 @@ export const OurWork = () => {
   return (
     <section id="realisations" className="py-24 lg:py-32 bg-secondary">
       <div className="container-narrow">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
-          <div>
-            <span className="eyebrow">Nos réalisations</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.05]">
-              Des projets{" "}
-              <em className="text-highlight not-italic">livrés, vécus,</em>
-              <br />
-              aimés.
-            </h2>
+        <Reveal>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+            <div>
+              <span className="eyebrow">Nos réalisations</span>
+              <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.05]">
+                Des projets{" "}
+                <em className="text-highlight not-italic">livrés, vécus,</em>
+                <br />
+                aimés.
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {workCategories.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setActive(c)}
+                  className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border cursor-pointer transition-all ${
+                    active === c
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border text-foreground/70 hover:border-primary hover:text-primary"
+                  }`}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {workCategories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setActive(c)}
-                className={`px-4 py-2 text-xs uppercase tracking-[0.2em] border cursor-pointer transition-all ${
-                  active === c
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "border-border text-foreground/70 hover:border-primary hover:text-primary"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((w, i) => (
-            <article
-              key={w.title}
-              className="group cursor-pointer animate-fade-up"
-              style={{ animationDelay: `${i * 60}ms` }}
-            >
+        <Reveal
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          stagger
+          staggerDelay={0.16}
+        >
+          {filtered.map((w) => (
+            <article key={w.title} className="group cursor-pointer">
               <div className="relative overflow-hidden aspect-4/5 bg-muted">
                 <img
                   src={w.img.src}
@@ -77,7 +80,7 @@ export const OurWork = () => {
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
 
         <div className="mt-14 text-center">
           <Button variant="outlineDark" size="lg" asChild>

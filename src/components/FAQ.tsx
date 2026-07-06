@@ -1,3 +1,6 @@
+"use client";
+
+import { Reveal } from "../Reveal";
 import {
   Accordion,
   AccordionContent,
@@ -34,42 +37,48 @@ const faqs = [
 
 export const FAQ = () => (
   <section id="faq" className="py-24 lg:py-32 bg-background">
-    <div className="container-narrow grid lg:grid-cols-12 gap-12">
-      <div className="lg:col-span-4">
-        <span className="eyebrow">Questions fréquentes</span>
-        <h2 className="mt-6 font-display text-4xl md:text-5xl text-primary leading-[1.05]">
-          Tout ce que vous vouliez{" "}
-          <em className="text-highlight not-italic">savoir.</em>
-        </h2>
-        <p className="mt-6 text-foreground/70 text-sm">
-          Une autre question ? Écrivez-nous à{" "}
-          <a
-            href="mailto:bonjour@maisonolive.fr"
-            className="text-accent underline-offset-4 hover:underline"
-          >
-            bonjour@maisonolive.fr
-          </a>
-          .
-        </p>
-      </div>
-      <div className="lg:col-span-8">
-        <Accordion type="single" collapsible className="border-t border-border">
-          {faqs.map((f, i) => (
-            <AccordionItem
-              key={i}
-              value={`item-${i}`}
-              className="border-b border-border"
+    <Reveal>
+      <div className="container-narrow grid lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-4">
+          <span className="eyebrow">Questions fréquentes</span>
+          <h2 className="mt-6 font-display text-4xl md:text-5xl text-primary leading-[1.05]">
+            Tout ce que vous vouliez{" "}
+            <em className="text-highlight not-italic">savoir.</em>
+          </h2>
+          <p className="mt-6 text-foreground/70 text-sm">
+            Une autre question ? Écrivez-nous à{" "}
+            <a
+              href="mailto:bonjour@maisonolive.fr"
+              className="text-accent underline-offset-4 hover:underline"
             >
-              <AccordionTrigger className="text-left font-display text-xl md:text-2xl text-primary hover:text-highlight hover:no-underline py-6">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-foreground/75 text-base leading-relaxed pb-6">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+              bonjour@maisonolive.fr
+            </a>
+            .
+          </p>
+        </div>
+        <div className="lg:col-span-8">
+          <Accordion
+            type="single"
+            collapsible
+            className="border-t border-border"
+          >
+            {faqs.map((f, i) => (
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="border-b border-border"
+              >
+                <AccordionTrigger className="text-left font-display text-xl md:text-2xl text-primary hover:text-highlight hover:no-underline py-6">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/75 text-base leading-relaxed pb-6">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
-    </div>
+    </Reveal>
   </section>
 );
