@@ -4,18 +4,20 @@ import heroImg from "@/public/assets/hero-living.webp";
 import { Button } from "@/src/components/ui/button";
 import { Phone } from "lucide-react";
 import { Reveal } from "../Reveal";
+import Image from "next/image";
 
 export const Hero = () => (
   <section
     id="accueil"
     className="hero relative min-h-screen flex items-end overflow-hidden"
   >
-    <img
-      src={heroImg.src}
+    <Image
+      src={heroImg}
       alt="Salon entièrement décoré aux teintes olive et terracotta"
-      width={1920}
-      height={1080}
-      className="absolute inset-0 w-full h-full object-cover"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover"
     />
     <div className="absolute inset-0 bg-gradient-hero" />
     <div className="absolute inset-0 bg-primary/20" />
