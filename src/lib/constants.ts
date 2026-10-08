@@ -1,10 +1,10 @@
-import living from "@/public/assets/room-living.jpg";
-import kitchen from "@/public/assets/room-kitchen.jpg";
-import bedroom from "@/public/assets/room-bedroom.jpg";
-import dining from "@/public/assets/room-dining.jpg";
-import office from "@/public/assets/room-office.jpg";
-import bathroom from "@/public/assets/room-bathroom.jpg";
-import kids from "@/public/assets/room-kids.jpg";
+import living from "@/public/assets/room-living.webp";
+import kitchen from "@/public/assets/room-kitchen.webp";
+import bedroom from "@/public/assets/room-bedroom.webp";
+import dining from "@/public/assets/room-dining.webp";
+import office from "@/public/assets/room-office.webp";
+import bathroom from "@/public/assets/room-bathroom.webp";
+import kids from "@/public/assets/room-kids.webp";
 
 import { StaticImageData } from "next/image";
 

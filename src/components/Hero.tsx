@@ -1,6 +1,6 @@
 "use client";
 
-import heroImg from "@/public/assets/hero-living.jpg";
+import heroImg from "@/public/assets/hero-living.webp";
 import { Button } from "@/src/components/ui/button";
 import { Phone } from "lucide-react";
 import { Reveal } from "../Reveal";
@@ -8,7 +8,7 @@ import { Reveal } from "../Reveal";
 export const Hero = () => (
   <section
     id="accueil"
-    className="relative min-h-screen flex items-end overflow-hidden"
+    className="hero relative min-h-screen flex items-end overflow-hidden"
   >
     <img
       src={heroImg.src}
@@ -19,6 +19,7 @@ export const Hero = () => (
     />
     <div className="absolute inset-0 bg-gradient-hero" />
     <div className="absolute inset-0 bg-primary/20" />
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0)_80%)]" />
 
     <div className="relative container-narrow py-24 lg:py-32">
       <Reveal stagger staggerDelay={0.16}>
@@ -31,7 +32,7 @@ export const Hero = () => (
             </em>
           </h1>
         </div>
-        <p className="mt-8 text-base md:text-lg text-primary-foreground/85 max-w-xl leading-relaxed">
+        <p className="mt-8 text-base md:text-lg text-primary-foreground max-w-xl leading-relaxed">
           Nous ne vendons pas du mobilier. Nous composons des pièces entièrement
           décorées — salons, cuisines, chambres — livrées clé en main, prêtes à
           être habitées.

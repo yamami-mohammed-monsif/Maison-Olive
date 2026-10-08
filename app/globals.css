@@ -20,7 +20,7 @@
   --color-muted: hsl(42 25% 88%);
   --color-muted-foreground: hsl(0 0% 35%);
 
-  --color-accent: hsl(40 47% 59%); /* Matte Gold #C9A961 */
+  --color-accent: hsl(40 47% 57%); /* Matte Gold #C9A961 */
   --color-accent-foreground: hsl(0 0% 18%);
 
   --color-highlight: hsl(11 35% 57%); /* Terracotta Blush #B87B6C */
@@ -69,6 +69,25 @@
   }
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.15) 45%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* Soft shadow keeps serif strokes readable over busy photo areas */
+.hero h1,
+.hero p {
+  text-shadow: 0 2px 18px rgb(0 0 0 / 0.6);
+}
+
 @layer components {
   .container-narrow {
     max-width: 80rem;
@@ -111,7 +130,8 @@
     --gradient-hero: linear-gradient(
       180deg,
       hsl(108 15% 18% / 0.15) 0%,
-      hsl(108 15% 18% / 0.65) 100%
+      hsl(108 15% 18% / 0.55) 60%,
+      hsl(108 15% 18% / 0.85) 100%
     );
     --gradient-gold: linear-gradient(135deg, hsl(40 47% 65%), hsl(40 47% 50%));
     --shadow-soft: 0 20px 60px -20px hsl(108 15% 18% / 0.25);
