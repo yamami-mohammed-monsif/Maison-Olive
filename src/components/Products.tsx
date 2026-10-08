@@ -29,7 +29,7 @@ export const Products = () => {
             </h2>
             <p className="mt-6 text-foreground/70">
               Chaque collection regroupe mobilier, textiles, luminaires et
-              accessoires — sélectionnés pour fonctionner ensemble.
+              accessoires, sélectionnés pour fonctionner ensemble.
             </p>
           </Reveal>
         </div>

@@ -36,7 +36,7 @@ export const Hero = () => (
         </div>
         <p className="mt-8 text-base md:text-lg text-primary-foreground max-w-xl leading-relaxed">
           Nous ne vendons pas du mobilier. Nous composons des pièces entièrement
-          décorées — salons, cuisines, chambres — livrées clé en main, prêtes à
+          décorées " salons, cuisines, chambres " livrées clé en main, prêtes à
           être habitées.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">

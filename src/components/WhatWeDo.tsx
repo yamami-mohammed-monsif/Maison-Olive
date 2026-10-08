@@ -7,12 +7,12 @@ const items = [
   {
     icon: Sofa,
     title: "Chambres & Salons Complets",
-    text: "Des ensembles coordonnés, prêts à installer — gain de temps et d'argent.",
+    text: "Des ensembles coordonnés, prêts à installer, gain de temps et d'argent.",
   },
   {
     icon: CreditCard,
     title: "Paiement en Plusieurs Fois",
-    text: "Achetez aujourd'hui, payez en 3, 6 ou 12 mois — sans frais cachés.",
+    text: "Achetez aujourd'hui, payez en 3, 6 ou 12 mois, sans frais cachés.",
   },
   {
     icon: Truck,
@@ -41,7 +41,7 @@ export const WhatWeDo = () => (
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
-              Plutôt qu'un canapé ici, une lampe là — nous concevons des pièces
+              Plutôt qu'un canapé ici, une lampe là, nous concevons des pièces
               entières, cohérentes et habitées. Une approche d'architecte
               d'intérieur, livrée comme un produit fini.
             </p>

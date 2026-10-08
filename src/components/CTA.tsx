@@ -18,8 +18,8 @@ export const CTA = () => (
             </em>
           </h2>
           <p className="mt-6 text-foreground/70 max-w-xl mx-auto">
-            Une visite, une conversation, un devis transparent. Aucun engagement
-            — simplement le début d'un beau projet.
+            Une visite, une conversation, un devis transparent. Aucun
+            engagement, simplement le début d'un beau projet.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button variant="default" size="lg" asChild>
