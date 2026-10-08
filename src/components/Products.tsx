@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { products, productCategories } from "@/src/lib/constants";
 import { Reveal } from "../Reveal";
 
@@ -64,13 +65,13 @@ export const Products = () => {
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div className="aspect-5/6 overflow-hidden">
-                <img
+                <Image
                   src={p.img.src}
                   alt={p.name}
+                  fill
                   loading="lazy"
-                  width={1024}
-                  height={1228}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
