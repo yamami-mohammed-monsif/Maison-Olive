@@ -17,6 +17,7 @@ export const Hero = () => (
       priority
       sizes="100vw"
       className="object-cover"
+      quality={70}
     />
     <div className="absolute inset-0 bg-gradient-hero" />
     <div className="absolute inset-0 bg-primary/20" />
