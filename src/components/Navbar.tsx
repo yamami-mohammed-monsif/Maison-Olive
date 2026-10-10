@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,7 +29,7 @@ export const Navbar = () => {
   const headerBg = isHome ? "" : "bg-background border-b border-border";
 
   return (
-    <motion.header
+    <m.header
       initial={prefersReducedMotion ? false : { opacity: 0, y: -24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -91,6 +91,6 @@ export const Navbar = () => {
           </div>
         </div>
       )}
-    </motion.header>
+    </m.header>
   );
 };

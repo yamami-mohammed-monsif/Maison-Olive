@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { m, useReducedMotion, Variants } from "framer-motion";
 import { Children, ReactNode } from "react";
 
 interface RevealProps {
@@ -25,7 +25,7 @@ export const Reveal = ({
   staggerDelay = 0.16,
 }: RevealProps) => {
   const reduce = useReducedMotion();
-  const Comp = motion[as] as typeof motion.div;
+  const Comp = m[as] as typeof m.div; // ← was motion[as] as typeof motion.div
 
   const baseTransition = {
     duration: 1,
@@ -80,7 +80,7 @@ export const Reveal = ({
         variants={variants}
       >
         {Children.map(Children.toArray(children), (child, index) => (
-          <motion.div
+          <m.div // ← was motion.div
             key={index}
             initial={reduce ? false : "hidden"}
             whileInView={reduce ? undefined : "show"}
@@ -90,7 +90,7 @@ export const Reveal = ({
             style={{ display: "block" }}
           >
             {child}
-          </motion.div>
+          </m.div> // ← was </motion.div>
         ))}
       </Comp>
     );
